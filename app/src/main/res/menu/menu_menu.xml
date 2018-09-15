@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.okcomputers.smartableproject.app.MenuActivity"
+    >
+
+    <item
+        android:id="@+id/SignUp"
+        android:orderInCategory="2"
+        android:title="SignUp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/Login"
+        app:showAsAction="always"
+        android:orderInCategory="1"
+        android:title="Login"
+        />
+
+</menu>

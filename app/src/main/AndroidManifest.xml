@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.okcomputers.smartableproject">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application xmlns:tools="http://schemas.android.com/tools"
+        android:allowBackup="true"
+        tools:replace="android:icon"
+        android:icon="@drawable/logo"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".app.MenuActivity"
+            android:label="SmartDiner"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".app.RiceCategory"
+            android:label="RiceMenu"
+            android:parentActivityName=".app.MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".app.SoupActivity"
+            android:label="SoupMenu"
+            android:parentActivityName=".app.MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".app.FishCategory"
+            android:screenOrientation="landscape"
+            android:label="FishMenu"
+            android:parentActivityName=".app.MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".app.StarterCategory"
+            android:screenOrientation="landscape"
+            android:label="StarterMenu"
+            android:parentActivityName=".app.MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".app.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".app.SignupActivity"
+            android:label="SignUp" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".app.Menu_activity"
+            android:label="Menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".AfterLoginActivities.RiceAfterlogin"
+            android:label="RiceMenu"
+            android:parentActivityName=".app.Menu_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".AfterLoginActivities.SoupAfterLogin"
+            android:label="SoupMenu"
+            android:parentActivityName=".app.Menu_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".AfterLoginActivities.StarterAfterLogin"
+            android:label="SoupMenu"
+            android:parentActivityName=".app.Menu_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".AfterLoginActivities.FishAfterLogin"
+            android:label="SeaFoodMenu"
+            android:parentActivityName=".app.Menu_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".app.WaitForOrderConfirm"
+            android:label="Smartable" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".AfterLoginActivities.OrderConfirm"
+            android:label="Smartable" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".AfterLoginActivities.RecieptActivity"
+            android:label="Reciept" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".AfterLoginActivities.OrderNow" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".AfterLoginActivities.EstimatedTimeActivity"
+            android:label="@string/title_activity_estimated_time"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".AfterLoginActivities.MyOrderActivity"></activity>
+    </application>
+
+</manifest>

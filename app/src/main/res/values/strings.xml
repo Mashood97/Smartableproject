@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Smartableproject</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_rice_category">RiceCategory</string>
+    <string name="title_activity_soup">SoupActivity</string>
+    <string name="title_activity_fish_category">FishCategory</string>
+    <string name="title_activity_starter_category">StarterCategory</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Enter your Email</string>
+    <string name="prompt_password">Enter your Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_sign">Signup</string>
+    <string name="title_activity_signup">Sign up</string>
+    <string name="title_activity_menu_activity">Menu_activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_reciept">Reciept</string>
+    <string name="title_activity_rice_after_login">RiceAfterLogin</string>
+    <string name="title_activity_soup_after_login">SoupAfterLogin</string>
+    <string name="title_activity_starter_after_login">StarterAfterLogin</string>
+    <string name="title_activity_fish_after_login">FishAfterLogin</string>
+    <string name="title_activity_rice_afterlogin">RiceAfterlogin</string>
+    <string name="title_activity_estimated_time">EstimatedTimeActivity</string>
+</resources>
