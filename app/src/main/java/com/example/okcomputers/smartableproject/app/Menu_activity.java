@@ -35,6 +35,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Menu_activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    //this is the activity when the user login successfully.
     private Button rice,soup,starter,fish;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private static final String TAG = "LoginScreen";
@@ -97,6 +98,8 @@ public class Menu_activity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        //accessing navigation header so that we can get user email from firebase to the header of nav bar.
         View headerview = navigationView.getHeaderView(0);
         TextView textView = headerview.findViewById(R.id.emailnav);
         textView.setText(user.getEmail());
@@ -148,6 +151,7 @@ public class Menu_activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        //it is used to goto the activities using nav drawer.
         if (id == R.id.menuid) {
             Intent i = new Intent(Menu_activity.this,Menu_activity.class);
             startActivity(i);
@@ -163,6 +167,8 @@ public class Menu_activity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    //flag activity new task means that it'll open new activity and clear task will clear the last activity.
     private void setupFirebaseListener() {
         Log.d(TAG, "setupFirebaseListener: setting up the auth state listener.");
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {

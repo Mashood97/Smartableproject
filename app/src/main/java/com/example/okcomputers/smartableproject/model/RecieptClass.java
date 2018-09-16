@@ -4,7 +4,10 @@ package com.example.okcomputers.smartableproject.model;
  * Created by OK Computers on 8/26/2018.
  */
 
-public class RecieptClass {
+//model class is a custom class to set and get data that we want.
+public class RecieptClass
+{
+    //we get itemname,quantity, totalprice and uid .
     private String ItemName;
     private int Quantity;
     private int TotalPrice;

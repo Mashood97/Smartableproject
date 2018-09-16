@@ -23,6 +23,7 @@ import java.util.ArrayList;
 
 public class FoodItemAdapterBeforeLogin  extends RecyclerView.Adapter<FoodItemAdapterBeforeLogin.MyViewHolder> {
 
+    //same as food item adapter
     Context context;
     ArrayList<FoodItemclass> profiles;
 

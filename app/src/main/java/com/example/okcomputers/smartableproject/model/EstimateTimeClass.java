@@ -6,6 +6,7 @@ package com.example.okcomputers.smartableproject.model;
 
 public class EstimateTimeClass {
 
+    //we get name and uid for estimate time act.
     private String ItemName;
     private String uid;
 

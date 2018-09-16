@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 public class RecieptAdapter extends RecyclerView.Adapter<RecieptAdapter.MyViewHolder> {
 
+    //in this we are creating reciept adapter so that we can generate reciept.
     Context context;
     ArrayList<RecieptClass> profiles;
 
@@ -32,11 +33,13 @@ public class RecieptAdapter extends RecyclerView.Adapter<RecieptAdapter.MyViewHo
     }
 
 
+    // inflate the custom layout of reciept list item to show on the activity context we pass. reciept_list_item is custom layout.
     @Override
     public RecieptAdapter.MyViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.reciept_list_item,parent,false));
     }
 
+    //same as food item adpter
     @Override
     public void onBindViewHolder( MyViewHolder holder, int position) {
         holder.name.setText(profiles.get(position).getItemName());

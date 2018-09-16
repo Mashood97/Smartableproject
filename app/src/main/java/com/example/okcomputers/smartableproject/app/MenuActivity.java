@@ -13,6 +13,8 @@ import com.example.okcomputers.smartableproject.R;
 
 public class MenuActivity extends AppCompatActivity {
 
+    //This is the first screen when app launches before login menu activity.
+
     private Button rice,soup,starter,fish;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +76,11 @@ public class MenuActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
         //noinspection SimplifiableIfStatement
+
+
+//Here if user tap on login or signuup will lead to its specific activity.
         if (id == R.id.Login) {
             Intent i = new Intent(MenuActivity.this,LoginActivity.class);
             startActivity(i);

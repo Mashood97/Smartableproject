@@ -47,10 +47,12 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("Users").push().child("Login");
 
+        //this is used when user is signin and authenticate as well so it'll lead to the menu activity.
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
+                //if user is not null i.e user is signed in.
                 if(firebaseAuth.getCurrentUser() !=null)
                 {
                     Intent i = new Intent(LoginActivity.this,Menu_activity.class);
@@ -59,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
+        //will go to signup activity page.
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //signin method will start.
         signin.setOnClickListener(  new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +87,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
     }
+
+    //signin method
     private void startSignin()
     {
         final String email = mEmail.getText().toString();
@@ -93,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         else
         {
+            //it is signed in with email and password user have and add on complete listener means if user is completely signin to the app
             mAuth.signInWithEmailAndPassword(email,pasw).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -101,6 +108,7 @@ public class LoginActivity extends AppCompatActivity {
                         mUser =mAuth.getCurrentUser();
                         if(mUser !=null)
                         {
+                            //saving user id and email into database having top node as login.
                             String uId = mUser.getUid();
                             String email = mUser.getEmail();
                             databaseReference.child("User-ID").setValue(uId);

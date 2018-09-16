@@ -29,23 +29,36 @@ import java.util.ArrayList;
 
 public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.MyViewHolder> {
 
+    //after login activities
     Context context;
+    //context of class
+
+    //creating arraylist
     ArrayList<FoodItemclass> profiles;
 
+    //Food item adapter.
 
+
+    //constructor
     public FoodItemAdapter(Context c , ArrayList<FoodItemclass> p)
     {
         context = c;
         profiles = p;
     }
 
+
+    //when we extend with recyclerview.adapter we get some methods to be inherit so these are the methods below.
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //we create my view holder below in which we use layoutinflater which inflate the layout into the custom layout we made.
+        //inflate converting layout. list_item is an custom layout.
         return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.list_item,parent,false));
 
     }
 
+    //bind view means we are binding the Myviewholder. where what button textview etc we initialize bind with it. in our case
+    // we use name,price and a btn too. and we send that data through intent to ordernow class.
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
@@ -63,12 +76,14 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.MyView
         });
     }
 
+    //it counts the data and we rreturn the size of arraylist
     @Override
     public int getItemCount() {
         return profiles.size();
     }
 
 
+    //view holder we create and extend with recyclerview.viewholder is builtin class.
     class MyViewHolder extends RecyclerView.ViewHolder
     {
         TextView name,price;

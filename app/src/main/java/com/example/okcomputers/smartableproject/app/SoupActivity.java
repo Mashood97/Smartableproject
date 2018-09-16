@@ -40,6 +40,8 @@ public class SoupActivity extends AppCompatActivity {
     FoodItemAdapterBeforeLogin adapter;
     private Button orderBtn;
 
+
+    //Comments will be same as starter activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

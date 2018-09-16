@@ -17,6 +17,7 @@ public class OrderConfirm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_confirm);
 
+        //In this Activity we tap on a button order confirm and will get to the Reciept Activity.
         recieptbtn = (Button)findViewById(R.id.RecieptBtn);
         recieptbtn.setOnClickListener(new View.OnClickListener() {
             @Override

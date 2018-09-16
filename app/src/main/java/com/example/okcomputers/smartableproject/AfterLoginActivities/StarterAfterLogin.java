@@ -47,7 +47,9 @@ public class StarterAfterLogin extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference().child("Starter");
         list = new ArrayList<>();
 
+        //we used getref.child("Starter"); to get all the children of rice node from firebase
 
+        //child event listener to get the data from the child of rice and when we update it with admin panel itll be added here.
         reference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {

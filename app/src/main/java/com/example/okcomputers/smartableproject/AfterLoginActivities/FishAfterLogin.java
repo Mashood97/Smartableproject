@@ -22,6 +22,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class FishAfterLogin extends AppCompatActivity {
+
+    //same work as before login fish category just a difference is that it'll goto order now activity to add quantity.
+    //recycler view is used to recycle the views thats a work as list its best example is a contact list it upgrades till then a user want.
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<FoodItemclass> list;
@@ -47,6 +50,7 @@ public class FishAfterLogin extends AppCompatActivity {
         list = new ArrayList<>();
 
 
+        //here we use add child event listener so that we can add more child from admin and it will update it.
         reference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {

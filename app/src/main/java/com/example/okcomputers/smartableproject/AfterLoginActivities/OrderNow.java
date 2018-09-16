@@ -23,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class OrderNow extends AppCompatActivity {
 
+    //In this activity we add quantity and forward it to another activity.
     private int quantity = 0;
     private TextView itemName,itemPrice;
     private DatabaseReference databaseReference;
@@ -94,6 +95,7 @@ public class OrderNow extends AppCompatActivity {
     //full order saved
     private void OrderNow() {
 
+        //This method is used to save all the order data into firebase database.
 
         FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();
         String email = user.getEmail();
@@ -101,6 +103,7 @@ public class OrderNow extends AppCompatActivity {
 
         if(user !=null) {
 
+            //it will generate the session id of orders.
             if (Utils.sessionId =="")
             {
                 // FIrst time order placing
@@ -108,6 +111,7 @@ public class OrderNow extends AppCompatActivity {
                 Utils.sessionId = FirebaseDatabase.getInstance().getReference("Orders").push().getKey();
 
             }
+            //It'll save the data into firebase database.
 
             //databaseReference = FirebaseDatabase.getInstance().getReference("Orders").child(Itemname);
             databaseReference = FirebaseDatabase.getInstance().getReference("Orders").push();
@@ -122,6 +126,7 @@ public class OrderNow extends AppCompatActivity {
             toast.setGravity(Gravity.CENTER| Gravity.BOTTOM, 0,0);
             toast.show();
 
+            //it will generate the order no.
             DatabaseReference webref = FirebaseDatabase.getInstance().getReference("WebOrders").child(Utils.nextOrderNum+"");
             webref.child("Email").setValue(email);
             webref.child("SessionId").setValue(Utils.sessionId);
@@ -130,6 +135,7 @@ public class OrderNow extends AppCompatActivity {
             // Change order number for next customer
             FirebaseDatabase.getInstance().getReference("WebOrders").child("NextOrderNum").setValue(Utils.nextOrderNum+1);
 
+            //it saves the data into web orders node in firebase.
             DatabaseReference itemsef = webref.child("items").push();
             itemsef.child("ItemName").setValue(Itemname);
             itemsef.child("ItemPrice").setValue(Integer.valueOf(ItemPrice));

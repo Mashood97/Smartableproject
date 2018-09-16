@@ -20,6 +20,7 @@ public class WaitForOrderConfirm extends AppCompatActivity {
         setContentView(R.layout.activity_wait_for_order_confirm);
 
 
+        // activity which pops up after order now activity.
         Thread thread = new Thread()
         {
             @Override

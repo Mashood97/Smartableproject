@@ -19,6 +19,8 @@ import java.util.ArrayList;
 
 public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.MyViewHolder> {
 
+
+    //Same as Food item adapter difference is we send orderid and session id through intents.
     Context mContext;
     ArrayList<MyOrderClass> myorders;
 

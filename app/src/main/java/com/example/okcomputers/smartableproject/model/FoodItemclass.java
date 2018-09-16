@@ -8,6 +8,8 @@ import java.io.Serializable;
 
 
 public class    FoodItemclass {
+
+    //name and price to be show on order now activity.
    private String Name;
    private int  Price;
 

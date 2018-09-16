@@ -24,6 +24,7 @@ import java.util.ArrayList;
 
 public class SoupAfterLogin extends AppCompatActivity {
 
+
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<FoodItemclass> list;
@@ -48,7 +49,9 @@ public class SoupAfterLogin extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference().child("Soup");
         list = new ArrayList<>();
 
+        //we used getref.child("Soup"); to get all the children of rice node from firebase
 
+        //child event listener to get the data from the child of rice and when we update it with admin panel itll be added here.
         reference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {

@@ -38,6 +38,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StarterCategory extends AppCompatActivity {
+
+    //We use recycler view and adapter and firebase to retrieve data from it.
+
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<FoodItemclass> list;
@@ -55,24 +58,35 @@ public class StarterCategory extends AppCompatActivity {
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Starter");
+
+        //initialize recycler view and layoutmangaer means which layout you want to be arrange it.
         recyclerView = (RecyclerView) findViewById(R.id.user_list);
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
+
+        //scrolling
         recyclerView.scrollToPosition(0);
 
+        //database reference to add or get data from firebase. here it means goto the firebase find the node starter and get its child.
         reference = FirebaseDatabase.getInstance().getReference().child("Starter");
+        //array list to store the data from firebase.
         list = new ArrayList<>();
 
 
+        //using child event listener from firebase so it'll get all data from firebase starter child values to into arraylist.
         reference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
 
+                // here we use model class food item class and datasnapshot is used to get the data from firebase
                 FoodItemclass foodItemclass = dataSnapshot.getValue(FoodItemclass.class);
+                //we add items into array list
                 list.add(foodItemclass);
 
-
+                //food item adapter before login add data into adapter.
                 adapter = new FoodItemAdapterBeforeLogin(StarterCategory.this,list);
+
+                //we set the adapter to recycler view.
                 recyclerView.setAdapter(adapter);
             }
 

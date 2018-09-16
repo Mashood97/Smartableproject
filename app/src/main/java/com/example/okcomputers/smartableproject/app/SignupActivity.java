@@ -55,6 +55,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+        // it creates user by enter email, membership no and pass and we make user to remember email and pasw to login to the app.
         mSignupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,17 +65,20 @@ public class SignupActivity extends AppCompatActivity {
 
                 user = mAuths.getCurrentUser();
 
+                //if any of the field is empty it'll pop up the toast.
                 if (TextUtils.isEmpty(email) && TextUtils.isEmpty(MemberNo) && TextUtils.isEmpty(Pass)) {
                     Toast toast = Toast.makeText(getApplicationContext(),"Please Insert all Fields",Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER| Gravity.BOTTOM, 0,0);
                     toast.show();
                 }
+                //if email field doesnt conatin @ or .com, it'll pop up the toast.
                 else if(!email.contains("@")||!email.contains(".com"))
                 {
                     Toast toast = Toast.makeText(getApplicationContext(),"Check your Email",Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER| Gravity.BOTTOM, 0,0);
                     toast.show();
                 }
+                //if pasw length must be 6
                 else if(Pass.length()!=6)
                 {
 
@@ -89,8 +93,10 @@ public class SignupActivity extends AppCompatActivity {
                        Toast toast = Toast.makeText(getApplicationContext(),"Email already exists,Try another",Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.CENTER| Gravity.BOTTOM, 0,0);
                         toast.show();
-                    }*/
-                    //else {
+                    }
+                    else {*/
+
+                    // here we create the user with email and password and also save the data of user into firebase database with node signup
                         mAuths.createUserWithEmailAndPassword(email, Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(Task<AuthResult> task) {

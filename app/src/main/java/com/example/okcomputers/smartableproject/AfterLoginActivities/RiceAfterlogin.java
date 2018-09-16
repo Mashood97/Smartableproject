@@ -32,6 +32,7 @@ import java.util.HashMap;
 
 public class RiceAfterlogin extends AppCompatActivity {
 
+    //same as before login activity the diff is about it will goto ordernow activity.
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<FoodItemclass> list;
@@ -56,7 +57,9 @@ public class RiceAfterlogin extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference().child("Rice");
         list = new ArrayList<>();
 
+        //we used getref.child("Rice"); to get all the children of rice node from firebase
 
+        //child event listener to get the data from the child of rice and when we update it with admin panel itll be added here.
       reference.addChildEventListener(new ChildEventListener() {
           @Override
           public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {

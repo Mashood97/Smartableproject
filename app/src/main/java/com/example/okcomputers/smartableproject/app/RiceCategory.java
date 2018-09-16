@@ -43,6 +43,9 @@ public class RiceCategory extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<FoodItemclass> list;
     FoodItemAdapterBeforeLogin adapter;
+
+
+    //Comments will be same as starter activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

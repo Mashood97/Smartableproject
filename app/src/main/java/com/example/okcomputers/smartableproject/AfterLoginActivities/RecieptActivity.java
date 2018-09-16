@@ -36,7 +36,7 @@ import java.util.List;
 
 public class RecieptActivity extends AppCompatActivity {
 
-
+// its an reciept activity. where the reciept is generated.
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<RecieptClass> list;
@@ -54,11 +54,13 @@ public class RecieptActivity extends AppCompatActivity {
         recyclerView = (RecyclerView)findViewById(R.id.recieptRecycle);
         Button finish = findViewById(R.id.ButtonFinish);
 
+        //scrolling of recycler view
         recyclerView.scrollToPosition(0);
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
 
         uid = FirebaseAuth.getInstance().getUid();
 
+        //we get the intent from the activity its coming from.
         if (getIntent().hasExtra("SessionId"))
         {
             sessionId = getIntent().getStringExtra("SessionId");
@@ -69,8 +71,10 @@ public class RecieptActivity extends AppCompatActivity {
             sessionId = Utils.sessionId;
         }
 
+        //we create a firebase reference
         reference = FirebaseDatabase.getInstance().getReference().child("Orders");
         //reference.orderByChild("UserId").equalTo(uid)
+        //if firebase session id equals to String session id. then retrieve all the data.
         reference.orderByChild("SessionId").equalTo(sessionId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

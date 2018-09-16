@@ -23,6 +23,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class MyOrderActivity extends AppCompatActivity {
+
+    //this is an activity appears from nav drawer.
+    //In this all the orders will appear of a specific user orders and save in firebase database.
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<MyOrderClass> list;
@@ -41,6 +44,7 @@ public class MyOrderActivity extends AppCompatActivity {
 
         uid = FirebaseAuth.getInstance().getUid();
 
+        //the order is saved with the name WebOrders and we get the order no of each node i.e order 1 order 2 of each user.
         reference = FirebaseDatabase.getInstance().getReference().child("WebOrders");
         reference.orderByChild("UserId").equalTo(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
